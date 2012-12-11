@@ -671,7 +671,7 @@ module NewRelic
           # we can handle gracefully.
           def log_error(error)
             log.error "Error establishing connection with New Relic Service at #{control.server}: #{error.message}"
-            log.debug error.backtrace.join("\n")
+            log.error error.backtrace.join("\n")
           end
 
           # When the server sends us an error with the license key, we
